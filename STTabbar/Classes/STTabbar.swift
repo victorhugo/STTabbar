@@ -24,6 +24,7 @@ public final class STTabbar: UITabBar {
     @IBInspectable public var unselectedItemColor: UIColor = UIColor.white
 
     private var shapeLayer: CALayer?
+    private var centerButton : UIButton?
     
     private func addShape() {
         let shapeLayer = CAShapeLayer()
@@ -88,8 +89,10 @@ public final class STTabbar: UITabBar {
     }
     
     private func setupMiddleButton() {
-        
-        let centerButton = UIButton(frame: CGRect(x: (self.bounds.width / 2)-(centerButtonHeight/2), y: -20, width: centerButtonHeight, height: centerButtonHeight))
+        if centerButton != nil{
+            centerButton.removeFromSuperview()
+        }
+        centerButton = UIButton(frame: CGRect(x: (self.bounds.width / 2)-(centerButtonHeight/2), y: -20, width: centerButtonHeight, height: centerButtonHeight))
         
         centerButton.layer.cornerRadius = centerButton.frame.size.width / 2.0
         centerButton.setTitle(buttonTitle, for: .normal)
