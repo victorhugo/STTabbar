@@ -24,7 +24,7 @@ public final class STTabbar: UITabBar {
     @IBInspectable public var unselectedItemColor: UIColor = UIColor.white
 
     private var shapeLayer: CALayer?
-    private var centerButton : UIButton?
+    private var centerButton : UIButton!
     
     private func addShape() {
         let shapeLayer = CAShapeLayer()
@@ -110,4 +110,3 @@ public final class STTabbar: UITabBar {
         self.centerButtonActionHandler()
      }
 }
-
